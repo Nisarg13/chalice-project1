@@ -1,0 +1,1 @@
+{"errorType":"Runtime.InvalidEntrypoint","errorMessage":"RequestId: a9b856e2-1502-4ece-88df-70fb0e1e0ce5 Error: exec: \"chalice\": executable file not found in $PATH"}
