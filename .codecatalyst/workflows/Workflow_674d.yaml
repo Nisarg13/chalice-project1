@@ -1,4 +1,4 @@
-Name: ChaliceBuildOnly
+Name: ChaliceBuildAndDeploy
 SchemaVersion: "1.0"
 
 Triggers:
@@ -19,9 +19,13 @@ Actions:
         - Run: |
             echo "Installing dependencies..."
             pip install --upgrade pip
-            pip install chalice bandit flake8 pytest coverage
+            pip install -r requirements.txt
+            pip install chalice bandit flake8 pytest coverage pytest-cov
 
-            echo "Running security/lint checks..."
+            echo "Setting AWS region..."
+            export AWS_DEFAULT_REGION=us-east-1  # or your preferred region
+
+            echo "Running security and lint checks..."
             bandit -r .
             flake8 .
 
@@ -29,4 +33,6 @@ Actions:
             pytest --cov=.
 
             echo "Packaging Chalice App..."
-            chalice package out  # (Optional) Creates a CloudFormation template
+            chalice package out --region us-east-2
+
+ 
