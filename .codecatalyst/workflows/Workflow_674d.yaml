@@ -19,7 +19,6 @@ Actions:
         - Run: |
             echo "Installing dependencies..."
             pip install --upgrade pip
-            pip install -r requirements.txt
             pip install chalice bandit flake8 pytest coverage pytest-cov
 
             echo "Setting AWS region..."
