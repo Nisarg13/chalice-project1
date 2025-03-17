@@ -31,7 +31,7 @@ Actions:
             sudo make install
 
             python3.12 -m pip install --upgrade pip
-            python3.12 -m pip install -r requirements.txt chalice bandit flake8 pytest coverage pytest-cov
+            python3.12 -m pip install chalice bandit flake8 pytest coverage pytest-cov
 
             bandit -r .
             flake8 .
