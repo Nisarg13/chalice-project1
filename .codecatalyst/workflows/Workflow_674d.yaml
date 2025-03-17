@@ -28,7 +28,4 @@ Actions:
             echo "Running tests..."
             pytest --cov=.
 
-            echo "Packaging Chalice App..."
-            chalice package out --region us-east-2
-
  
