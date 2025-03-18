@@ -19,3 +19,10 @@ Actions:
         - Run: |
             pip install --upgrade pip
             pip install chalice
+            
+            if [ -f "requirements.txt" ]; then
+              echo "requirements.txt found, installing dependencies..."
+              pip install -r requirements.txt
+            else
+              echo "requirements.txt not found, skipping dependency installation."
+            fi
